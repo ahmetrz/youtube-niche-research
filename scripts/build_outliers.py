@@ -23,17 +23,17 @@ agg=v.groupby("video_id").agg(days_trending=("trending_date","nunique"),markets=
 v=v.sort_values("views").drop_duplicates("video_id",keep="last").merge(agg,on="video_id")
 cc=["channel_id","subscriber_count","views_last_30_days","videos_last_30_days"]
 m=v.merge(ch[cc],on="channel_id",how="inner")
-m=m[(m.subscriber_count.between(1000,2000000)) & (m.views_last_30_days>0) & (m.videos_last_30_days>0)].copy()
+m=m[(m.subscriber_count.between(1000,750000)) & (m.views_last_30_days>0) & (m.videos_last_30_days>0)].copy()
 # Remove categories dominated by music/gaming/film and obvious official/promotional/news noise.
 m=m[~m.category_id.isin([1,10,20])]
-bad=r"#shorts|official trailer|main trailer|teaser|official video|official audio|episode [0-9]|breaking news|live:"
+bad=r"#shorts|\\bshorts?\\b|official trailer|main trailer|teaser|official video|official audio|episode [0-9]|breaking news|live:|press conference|highlights"
 m=m[~m.title.str.contains(bad,case=False,na=False,regex=True)]
-chanbad=r"warner|netflix|disney|sony|universal|forbes|times now|news|tv|records|music"
+chanbad=r"warner|netflix|disney|sony|universal|forbes|times now|news|tv|records|music|bbc|sky sports|tnt|talksport|fox|lbc|dazn|espn|cbs|nbc|abc|cnn|shorts"
 m=m[~m.channel_title.str.contains(chanbad,case=False,na=False,regex=True)]
 m["baseline"]=m.views_last_30_days/m.videos_last_30_days
 m["relative"]=m.views/m.baseline
 m["views_per_sub"]=m.views/m.subscriber_count
-m=m[(m.views>=100000)&(m.relative>=1.5)]
+m=m[(m.views>=75000)&(m.relative>=1.5)]
 m["outlier_score"]=np.log1p(m.relative)*np.log1p(m.views_per_sub+1)*np.log1p(m.days_trending+1)
 cols=["title","channel_title","views","subscriber_count","baseline","relative","views_per_sub","days_trending","markets","category_id","video_id","outlier_score"]
 m=m.sort_values(["outlier_score","views"],ascending=False)[cols].head(1000)
