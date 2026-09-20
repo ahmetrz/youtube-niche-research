@@ -1,10 +1,13 @@
 name: Refresh YouTube Research
+
 on:
   workflow_dispatch:
   schedule:
     - cron: "17 5 * * *"
+
 permissions:
   contents: write
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
@@ -14,15 +17,18 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
-      - run: pip install pandas numpy kaggle
+      - name: Install dependencies
+        run: pip install pandas numpy kaggle
       - name: Build clean outlier dataset
         env:
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
-        run: python scripts/build_outliers.py\n      - name: Build repeated micro-niche clusters\n        run: python scripts/build_clusters.py
+        run: python scripts/build_outliers.py
+      - name: Build repeated micro-niche clusters
+        run: python scripts/build_clusters.py
       - name: Commit refreshed data
         run: |
           git config user.name "youtube-research-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/outliers.json data/rejected.json data/quality.json data/clusters.json data/watchlist.json
-          git diff --cached --quiet || git commit -m "Refresh YouTube outlier data"
+          git diff --cached --quiet || git commit -m "Refresh YouTube research data"
           git push
