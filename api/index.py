@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from fastapi import FastAPI, HTTPException
 
-app = FastAPI(title="YouTube Niche Research API")
+os.environ["KAGGLE_CONFIG_DIR"]="/tmp/.kaggle"\nos.environ["HOME"]="/tmp"\nPath("/tmp/.kaggle").mkdir(parents=True, exist_ok=True)\n\napp = FastAPI(title="YouTube Niche Research API")
 DATA=Path("/tmp/ytdata")
 DATA.mkdir(exist_ok=True)
 
