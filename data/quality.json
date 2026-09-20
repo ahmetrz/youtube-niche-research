@@ -1,0 +1,13 @@
+{
+  "raw_rows": 32800,
+  "unique_videos": 22776,
+  "channel_joined": 10105,
+  "eligible_outliers": 6,
+  "rejected": 10099,
+  "rejection_reasons": {
+    "excluded_category": 6603,
+    "channel_size": 3363,
+    "news_current_affairs": 132,
+    "institutional_media_or_brand": 1
+  }
+}

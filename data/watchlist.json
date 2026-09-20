@@ -1,0 +1,86 @@
+[
+  {
+    "cluster": "experiment_test",
+    "video_count": 1,
+    "independent_channels": 1,
+    "shared_terms": [],
+    "evidence": [
+      {
+        "title": "Shooting challenge vs Joao Felix 🔥",
+        "channel_title": "MoAliFC",
+        "views": 2393028,
+        "subscriber_count": 553000,
+        "relative": 16.0537160712,
+        "video_id": "a45DQHReuWE"
+      }
+    ],
+    "status": "WATCHLIST"
+  },
+  {
+    "cluster": "mechanism_explainer",
+    "video_count": 1,
+    "independent_channels": 1,
+    "shared_terms": [],
+    "evidence": [
+      {
+        "title": "Why Can't You Breathe Underwater?",
+        "channel_title": "QI",
+        "views": 712643,
+        "subscriber_count": 477000,
+        "relative": 12.097377705,
+        "video_id": "720B1ske3Ss"
+      }
+    ],
+    "status": "WATCHLIST"
+  },
+  {
+    "cluster": "other",
+    "video_count": 3,
+    "independent_channels": 3,
+    "shared_terms": [],
+    "evidence": [
+      {
+        "title": "Wrong side of the road 😂👮‍♂️￼",
+        "channel_title": "Nikolai Aksenov",
+        "views": 249330,
+        "subscriber_count": 451000,
+        "relative": 2.9463771564,
+        "video_id": "uO7w-mSJCp8"
+      },
+      {
+        "title": "HISTORY! 🤯 | FIRST NINE-DARTER BY A WOMAN ON THE PROTOUR! | Beau Greaves | Players Championship 6",
+        "channel_title": "Professional Darts Corporation",
+        "views": 173198,
+        "subscriber_count": 617000,
+        "relative": 2.187863725,
+        "video_id": "pHzn8v3SD5s"
+      },
+      {
+        "title": "Western Digital is SOLD OUT for 2026",
+        "channel_title": "LMG Clips",
+        "views": 189109,
+        "subscriber_count": 624000,
+        "relative": 1.795578008,
+        "video_id": "mp6Y90ulp44"
+      }
+    ],
+    "status": "WATCHLIST"
+  },
+  {
+    "cluster": "engineering_technology",
+    "video_count": 1,
+    "independent_channels": 1,
+    "shared_terms": [],
+    "evidence": [
+      {
+        "title": "Auction SHOCK Resuts as Richard Hammond's Car Collection Sells!",
+        "channel_title": "AdamC3046",
+        "views": 127417,
+        "subscriber_count": 695000,
+        "relative": 3.2113567054,
+        "video_id": "sM4vuKym5QI"
+      }
+    ],
+    "status": "WATCHLIST"
+  }
+]
